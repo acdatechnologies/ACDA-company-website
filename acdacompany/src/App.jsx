@@ -1,12 +1,19 @@
-import React from 'react';
-import Home from './Pages/Home';
+import { Routes, Route } from "react-router-dom";
+import Layout from "./Components/Layout";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Services from "./Pages/Services";
+import Contact from "./Pages/Contacts";
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contacts" element={<Contact />} />
+      </Route>
+    </Routes>
   );
 }
-
-export default App;
